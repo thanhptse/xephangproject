@@ -3,3 +3,7 @@ D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Common\bin\Debug\Xep
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Common\obj\Debug\XepHang.Common.csprojResolveAssemblyReference.cache
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Common\obj\Debug\XepHang.Common.dll
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Common\obj\Debug\XepHang.Common.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Common\bin\Debug\XepHang.Common.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Common\bin\Debug\XepHang.Common.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Common\obj\Debug\XepHang.Common.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Common\obj\Debug\XepHang.Common.pdb
