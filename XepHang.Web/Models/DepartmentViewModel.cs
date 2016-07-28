@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,7 @@ namespace XepHang.Web.Models
     public class DepartmentViewModel
     {
         public int DepeartmentId { get; set; }
-
+        [Required]
         public string DepeartmentName { get; set; }
 
         public DateTime CreatedDate { get; set; }

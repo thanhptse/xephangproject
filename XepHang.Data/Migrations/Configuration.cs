@@ -1,9 +1,10 @@
-namespace XepHang.Data.Migrations
+﻿namespace XepHang.Data.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -17,32 +18,52 @@ namespace XepHang.Data.Migrations
 
         protected override void Seed(XepHangDbContext context)
         {
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XepHangDbContext()));
+            CreateDepartmentSample(context);
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XepHangDbContext()));
 
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new XepHangDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new XepHangDbContext()));
 
-            var user = new ApplicationUser()
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "thanhpt",
+            //    Email = "thanhptse@gmail.com",
+            //    EmailConfirmed = true,
+            //    BirthDay = DateTime.Now,
+            //    FullName = "Phan Trung Thanh"
+
+            //};
+
+            //manager.Create(user, "123abc$#");
+
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //    roleManager.Create(new IdentityRole { Name = "Doctor" });
+            //}
+
+            //var adminUser = manager.FindByEmail("thanhptse@gmail.com");
+
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User", "Doctor" });
+        }
+
+        private void CreateDepartmentSample(XepHangDbContext context)
+        {
+            if (context.Departments.Count() == 0)
             {
-                UserName = "thanhpt",
-                Email = "thanhptse@gmail.com",
-                EmailConfirmed = true,
-                BirthDay = DateTime.Now,
-                FullName = "Phan Trung Thanh"
+                List<Department> listDepartment = new List<Department>()
+                {
+                     new Department() {DepeartmentName="Da Liễu",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepeartmentName="Nhi",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepeartmentName="Răng Hàm Mặt",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepeartmentName="Phụ Sản",CreatedDate=DateTime.Now,Status=true },
 
-            };
+                };
 
-            manager.Create(user, "123abc$#");
-
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-                roleManager.Create(new IdentityRole { Name = "Doctor" });
+                context.Departments.AddRange(listDepartment);
+                context.SaveChanges();
             }
 
-            var adminUser = manager.FindByEmail("thanhptse@gmail.com");
-
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User", "Doctor" });
         }
     }
 }

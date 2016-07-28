@@ -14,7 +14,7 @@ using AutoMapper;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/department")]
-    [Authorize]
+  //  [Authorize]
     public class DepartmentController : ApiControllerBase
     {
         IDepartmentService _departmentService;
@@ -26,46 +26,55 @@ namespace XepHang.Web.API
         }
 
         [Route("getall")]
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public HttpResponseMessage Get(HttpRequestMessage request, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
+                int totalRow = 0;
                 var listDepartment = _departmentService.GetAll();
 
-                var listDepartmentVm = Mapper.Map<List<DepartmentViewModel>>(listDepartment);
+                totalRow = listDepartment.Count();
+                var query = listDepartment.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
 
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listDepartmentVm);
-                //HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listDepartment);
+                var listDepartmentVm = Mapper.Map<IEnumerable<Department>,IEnumerable<DepartmentViewModel>>(query);
+
+                var paginationSet = new PaginationSet<DepartmentViewModel>()
+                {
+                    Items = listDepartmentVm,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
 
                 return response;
             });
         }
 
-        [Route("add")]
-        public HttpResponseMessage Post(HttpRequestMessage request, DepartmentViewModel departmentVm)
+
+        [Route("create")]
+        public HttpResponseMessage Post(HttpRequestMessage request, DepartmentViewModel departmentVM)
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                HttpResponseMessage respone = null;
+                if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
+                    respone = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }else
                 {
-                    Department newDepartment = new Department();
-                    newDepartment.UpdateDepartment(departmentVm);
-
-                    var department = _departmentService.Add(newDepartment);
+                    
+                    var newDepartment = new Department();
+                    newDepartment.UpdateDepartment(departmentVM);
+                    _departmentService.Add(newDepartment);
                     _departmentService.SaveChanges();
 
-                    response = request.CreateResponse(HttpStatusCode.Created, department);
-
+                    var responseData = Mapper.Map<Department, DepartmentViewModel>(newDepartment);
+                    respone = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
-                return response;
+                
+                return respone;
             });
         }
-
-        
     }
 }

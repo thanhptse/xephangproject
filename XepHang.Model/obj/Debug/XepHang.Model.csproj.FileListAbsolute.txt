@@ -25,3 +25,4 @@ D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xm
 D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.dll
 D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.csprojResolveAssemblyReference.cache

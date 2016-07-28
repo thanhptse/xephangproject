@@ -201,6 +201,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\DepartmentViewModel.cs" />
@@ -220,7 +221,19 @@
     <Content Include="app\components\departments\departmentListView.html" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\rooms\roomAddController.js" />
+    <Content Include="app\components\rooms\roomAddView.html" />
+    <Content Include="app\components\rooms\roomEditController.js" />
+    <Content Include="app\components\rooms\roomEditView.html" />
+    <Content Include="app\components\rooms\roomListController.js" />
+    <Content Include="app\components\rooms\roomListView.html" />
+    <Content Include="app\components\rooms\rooms.module.js" />
+    <Content Include="app\share\directives\asDateDirective.js" />
+    <Content Include="app\share\directives\pagerDirective.html" />
+    <Content Include="app\share\directives\pagerDirective.js" />
+    <Content Include="app\share\fillters\statusFillter.js" />
     <Content Include="app\share\modules\xephang.common.js" />
+    <Content Include="app\share\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
@@ -324,11 +337,9 @@
   <ItemGroup>
     <Folder Include="app\components\orders\" />
     <Folder Include="app\components\roles\" />
-    <Folder Include="app\components\rooms\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\share\footer\" />
     <Folder Include="app\share\navigation\" />
-    <Folder Include="app\share\services\" />
     <Folder Include="App_Data\" />
     <Folder Include="Assets\admin\js\pages\" />
     <Folder Include="Assets\admin\libs\bootstrap\dist\" />
@@ -338,7 +349,6 @@
     <Folder Include="Assets\admin\libs\fastclick\lib\" />
     <Folder Include="Assets\admin\libs\jquery-slimscroll\examples\" />
     <Folder Include="Assets\client\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -399,6 +409,9 @@
     <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
