@@ -14,7 +14,7 @@ using AutoMapper;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/department")]
-  //  [Authorize]
+    [Authorize]
     public class DepartmentController : ApiControllerBase
     {
         IDepartmentService _departmentService;
@@ -67,6 +67,7 @@ namespace XepHang.Web.API
                     var newDepartment = new Department();
                     newDepartment.UpdateDepartment(departmentVM);
                     newDepartment.CreatedDate = DateTime.Now;
+                    newDepartment.CreateBy = User.Identity.Name;
                     _departmentService.Add(newDepartment);
                     _departmentService.SaveChanges();
 
@@ -94,6 +95,7 @@ namespace XepHang.Web.API
                     var dbDepartment = _departmentService.GetById(departmentVM.DepeartmentId);
                     dbDepartment.UpdateDepartment(departmentVM);
                     dbDepartment.ModifiledDate = DateTime.Now;
+                    dbDepartment.ModifiledBy = User.Identity.Name;
                     _departmentService.Update(dbDepartment);
                     _departmentService.SaveChanges();
 
