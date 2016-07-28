@@ -221,6 +221,9 @@
     <Content Include="app\components\departments\departmentListView.html" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\home\rootController.js" />
+    <Content Include="app\components\login\loginController.js" />
+    <Content Include="app\components\login\loginView.html" />
     <Content Include="app\components\rooms\roomAddController.js" />
     <Content Include="app\components\rooms\roomAddView.html" />
     <Content Include="app\components\rooms\roomEditController.js" />
@@ -234,6 +237,7 @@
     <Content Include="app\share\fillters\statusFillter.js" />
     <Content Include="app\share\modules\xephang.common.js" />
     <Content Include="app\share\services\apiService.js" />
+    <Content Include="app\share\views\baseView.html" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />

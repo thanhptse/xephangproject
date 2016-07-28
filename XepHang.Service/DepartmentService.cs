@@ -23,7 +23,7 @@ namespace XepHang.Service
 
         IEnumerable<Department> GetAllByRoomPaging(int room, int page, int pageSize, out int totalRow);
 
-        Order GetById(int id);
+        Department GetById(int id);
 
 
         void SaveChanges();
@@ -64,9 +64,9 @@ namespace XepHang.Service
             throw new NotImplementedException();
         }
 
-        public Order GetById(int id)
+        public Department GetById(int id)
         {
-            throw new NotImplementedException();
+            return _departmentRepository.GetSingleById(id);
         }
 
         public void SaveChanges()

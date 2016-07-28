@@ -66,6 +66,7 @@ namespace XepHang.Web.API
                     
                     var newDepartment = new Department();
                     newDepartment.UpdateDepartment(departmentVM);
+                    newDepartment.CreatedDate = DateTime.Now;
                     _departmentService.Add(newDepartment);
                     _departmentService.SaveChanges();
 
@@ -74,6 +75,49 @@ namespace XepHang.Web.API
                 }
                 
                 return respone;
+            });
+        }
+
+        [Route("update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, DepartmentViewModel departmentVM)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage respone = null;
+                if (!ModelState.IsValid)
+                {
+                    respone = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+
+                    var dbDepartment = _departmentService.GetById(departmentVM.DepeartmentId);
+                    dbDepartment.UpdateDepartment(departmentVM);
+                    dbDepartment.ModifiledDate = DateTime.Now;
+                    _departmentService.Update(dbDepartment);
+                    _departmentService.SaveChanges();
+
+                    var responseData = Mapper.Map<Department, DepartmentViewModel>(dbDepartment);
+                    respone = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+
+                return respone;
+            });
+        }
+
+        [Route("getbyid/{id:int}")]
+        public HttpResponseMessage Get(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _departmentService.GetById(id);
+
+
+                var reponseData = Mapper.Map<Department, DepartmentViewModel>(model);
+
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, reponseData);
+
+                return response;
             });
         }
     }

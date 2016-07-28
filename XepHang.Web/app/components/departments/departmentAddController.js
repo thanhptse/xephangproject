@@ -4,21 +4,22 @@
 
     departmentAddController.$inject = ['apiService', '$scope', '$state'];
 
-    $scope.AddDepartment = AddDepartment;
-
     function departmentAddController(apiService, $scope, $state) {
         $scope.department = {
             CreatedDate: new Date(),
             Status: true
         }
-    }
 
-    function AddDepartment() {
-        apiService.post('api/department/post', $scope.department, function (result) {
-            $state.go('departments')
-        }, function (error) {
-            
-        });
+        $scope.AddDepartment = AddDepartment;
+
+        function AddDepartment() {
+            apiService.post('api/department/create', $scope.department, function (result) {
+                $state.go('departments')
+            }, function (error) {
+                console.log('Add department fail')
+            });
+        }
+
     }
 
 })(angular.module('xephang.departments'));

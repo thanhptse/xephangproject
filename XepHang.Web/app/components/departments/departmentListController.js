@@ -23,7 +23,7 @@
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
                 $scope.totalCount = result.data.TotalCount;
-            }, function () {
+            }, function (error) {
                 console.log('Load department fail');
             });
         }

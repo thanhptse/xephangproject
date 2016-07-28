@@ -15,6 +15,7 @@ namespace XepHang.Web.Infrastructure.Extensions
             department.DepeartmentName = departmentVM.DepeartmentName;
 
             department.CreatedDate = departmentVM.CreatedDate;
+            department.Note = departmentVM.Note;
             department.CreateBy = departmentVM.CreateBy;
             department.ModifiledDate = departmentVM.ModifiledDate;
             department.ModifiledBy = departmentVM.ModifiledBy;
