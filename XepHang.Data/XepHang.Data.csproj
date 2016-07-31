@@ -64,21 +64,13 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201607191703553_TheSecond.cs" />
-    <Compile Include="Migrations\201607191703553_TheSecond.Designer.cs">
-      <DependentUpon>201607191703553_TheSecond.cs</DependentUpon>
+    <Compile Include="Migrations\201607310543583_ResetAll.cs" />
+    <Compile Include="Migrations\201607310543583_ResetAll.Designer.cs">
+      <DependentUpon>201607310543583_ResetAll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607191938492_AddErrorTable.cs" />
-    <Compile Include="Migrations\201607191938492_AddErrorTable.Designer.cs">
-      <DependentUpon>201607191938492_AddErrorTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607250025520_Add-AspNetIdentity.cs" />
-    <Compile Include="Migrations\201607250025520_Add-AspNetIdentity.Designer.cs">
-      <DependentUpon>201607250025520_Add-AspNetIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607251359139_fixErrorWebApi.cs" />
-    <Compile Include="Migrations\201607251359139_fixErrorWebApi.Designer.cs">
-      <DependentUpon>201607251359139_fixErrorWebApi.cs</DependentUpon>
+    <Compile Include="Migrations\201607310557444_AddSome.cs" />
+    <Compile Include="Migrations\201607310557444_AddSome.Designer.cs">
+      <DependentUpon>201607310557444_AddSome.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,17 +96,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607191703553_TheSecond.resx">
-      <DependentUpon>201607191703553_TheSecond.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607310543583_ResetAll.resx">
+      <DependentUpon>201607310543583_ResetAll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607191938492_AddErrorTable.resx">
-      <DependentUpon>201607191938492_AddErrorTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607250025520_Add-AspNetIdentity.resx">
-      <DependentUpon>201607250025520_Add-AspNetIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607251359139_fixErrorWebApi.resx">
-      <DependentUpon>201607251359139_fixErrorWebApi.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607310557444_AddSome.resx">
+      <DependentUpon>201607310557444_AddSome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

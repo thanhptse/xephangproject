@@ -29,7 +29,7 @@ namespace XepHang.Test.Respository
         public void Department_Repository_Create()
         {
             Department department = new Department();
-            department.DepeartmentName = "Da liễu";
+            department.DepartmentName = "Da liễu";
             department.CreateBy = "thanhpt";
             department.CreatedDate = DateTime.Now;
             department.Status = true;
@@ -38,7 +38,7 @@ namespace XepHang.Test.Respository
             unitOfWork.Commit();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(9, result.DepeartmentId);
+            Assert.AreEqual(9, result.DepartmentId);
         }
 
         [TestMethod]

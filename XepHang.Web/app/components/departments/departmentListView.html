@@ -27,14 +27,6 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control"  placeholder="Từ khóa">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Tìm kiếm</button>
-                        </span>
-                    </div><!-- /input-group -->
-                </div>
-                <div class="col-md-6">
                     <button class="btn btn-success" ui-sref="department_add">Thêm mới</button>
                 </div>
             </div>
@@ -51,8 +43,8 @@
                             <th style="width: 10%">Thao tác</th>
                         </tr>
                         <tr ng-repeat="item in departments">
-                            <td>{{item.DepeartmentId}}</td>
-                            <td>{{item.DepeartmentName}}</td>
+                            <td>{{item.DepartmentId}}</td>
+                            <td>{{item.DepartmentName}}</td>
                             <td>{{item.Note}}</td>
                             <td>
                                 {{item.CreatedDate | date: 'dd/MM/yyyy'}}
@@ -64,13 +56,13 @@
                                 </span>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-primary" ui-sref="department_edit({id:item.DepeartmentId})"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-sm btn-primary" ui-sref="department_edit({id:item.DepartmentId})"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm btn-danger" ng-click="deleteDepartment(item.DepartmentId)"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
-                        <tfoot>
+                        <tr>
                             <td colspan="4">Tổng số bản ghi: {{totalCount}}</td>
-                        </tfoot>
+                        </tr>
                     </table>
 
                 </div>

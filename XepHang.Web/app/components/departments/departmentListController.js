@@ -2,13 +2,31 @@
 
     app.controller('departmentListController', departmentListController);
 
-    departmentListController.$inject = ['$scope', 'apiService'];
+    departmentListController.$inject = ['$scope', 'apiService', '$ngBootbox'];
 
-    function departmentListController($scope, apiService) {
+    function departmentListController($scope, apiService, $ngBootbox) {
         $scope.departments = [];
         $scope.page = 0;
         $scope.pagesCount = 0;;
         $scope.getListDepartments = getListDepartments;
+
+        $scope.deleteDepartment = deleteDepartment;
+
+        function deleteDepartment(id) {
+            $ngBootbox.confirm('Các phòng liên quan đến khoa này sẽ bị xóa hết. Bạn có chắc muốn xóa không?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('api/department/delete', config, function () {
+                    $ngBootbox.alert('Xóa thành công');
+                    getListDepartments();
+                }, function () {
+                    console.log('Xóa không thành công');
+                })
+            });
+        }
 
         function getListDepartments(page) {
             page = page || 0;

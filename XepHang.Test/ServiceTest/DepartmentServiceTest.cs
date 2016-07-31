@@ -25,9 +25,9 @@ namespace XepHang.Test.ServiceTest
             _departmentService = new DepartmentService(_mockRepository.Object, _mockUnitOfWork.Object);
             _listDepartment = new List<Department>
             {
-                new Department() {DepeartmentId=1,DepeartmentName="Xin chao", CreatedDate=DateTime.Now,Status=true },
-                new Department() {DepeartmentId=2,DepeartmentName="Xin hi", CreatedDate=DateTime.Now,Status=true },
-                new Department() {DepeartmentId=3,DepeartmentName="Xin chao hi", CreatedDate=DateTime.Now,Status=true },
+                new Department() {DepartmentId=1,DepartmentName="Xin chao", CreatedDate=DateTime.Now,Status=true },
+                new Department() {DepartmentId=2,DepartmentName="Xin hi", CreatedDate=DateTime.Now,Status=true },
+                new Department() {DepartmentId=3,DepartmentName="Xin chao hi", CreatedDate=DateTime.Now,Status=true },
             };
         }
 
@@ -48,21 +48,21 @@ namespace XepHang.Test.ServiceTest
         public void Department_Service_Create()
         {
             Department department = new Department();
-            department.DepeartmentName = "Da liễu";
+            department.DepartmentName = "Da liễu";
             department.CreateBy = "thanhpt";
             department.CreatedDate = DateTime.Now;
             department.Status = true;
 
             _mockRepository.Setup(m => m.Add(department)).Returns((Department d) =>
             {
-                d.DepeartmentId = 1;
+                d.DepartmentId = 1;
                 return d;
             });
 
             var result = _departmentService.Add(department);
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.DepeartmentId);
+            Assert.AreEqual(1, result.DepartmentId);
         }
     }
 }

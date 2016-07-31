@@ -4,7 +4,8 @@
     angular.module('xephang',
         ['xephang.departments',
          'xephang.rooms',
-         'xephang.common'])
+         'xephang.common',
+        'xephang.orders'])
         .config(config)
         .config(configAuthentication);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];

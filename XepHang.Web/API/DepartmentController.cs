@@ -14,7 +14,7 @@ using AutoMapper;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/department")]
-    [Authorize]
+    //[Authorize]
     public class DepartmentController : ApiControllerBase
     {
         IDepartmentService _departmentService;
@@ -34,7 +34,7 @@ namespace XepHang.Web.API
                 var listDepartment = _departmentService.GetAll();
 
                 totalRow = listDepartment.Count();
-                var query = listDepartment.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                var query = listDepartment.OrderBy(x=>x.DepartmentId).Skip(page * pageSize).Take(pageSize);
 
                 var listDepartmentVm = Mapper.Map<IEnumerable<Department>,IEnumerable<DepartmentViewModel>>(query);
 
@@ -92,7 +92,7 @@ namespace XepHang.Web.API
                 else
                 {
 
-                    var dbDepartment = _departmentService.GetById(departmentVM.DepeartmentId);
+                    var dbDepartment = _departmentService.GetById(departmentVM.DepartmentId);
                     dbDepartment.UpdateDepartment(departmentVM);
                     dbDepartment.ModifiledDate = DateTime.Now;
                     dbDepartment.ModifiledBy = User.Identity.Name;
@@ -119,6 +119,45 @@ namespace XepHang.Web.API
 
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, reponseData);
 
+                return response;
+            });
+        }
+
+        [Route("delete")]
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage respone = null;
+                if (!ModelState.IsValid)
+                {
+                    respone = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                   var oldDepartment =  _departmentService.Delete(id);
+                    _departmentService.SaveChanges();
+
+                    var reponseData = Mapper.Map<Department, DepartmentViewModel>(oldDepartment);
+
+                    respone = request.CreateResponse(HttpStatusCode.OK, reponseData);
+                }
+
+                return respone;
+            });
+        }
+
+        [Route("getalldepartment")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _departmentService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<Department>, IEnumerable<DepartmentViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;
             });
         }

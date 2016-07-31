@@ -72,17 +72,17 @@ namespace XepHang.Service
 
         public Order GetById(int id)
         {
-            throw new NotImplementedException();
+            return _orderRepository.GetSingleById(id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
 
         public void Update(Order order)
         {
-            throw new NotImplementedException();
+            _orderRepository.Update(order);
         }
     }
 }

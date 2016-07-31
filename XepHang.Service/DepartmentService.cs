@@ -15,7 +15,7 @@ namespace XepHang.Service
 
         void Update(Department department);
 
-        void Delete(int id);
+        Department Delete(int id);
 
         IEnumerable<Department> GetAll();
 
@@ -44,9 +44,9 @@ namespace XepHang.Service
             return _departmentRepository.Add(department);
         }
 
-        public void Delete(int id)
+        public Department Delete(int id)
         {
-            _departmentRepository.Delete(id);
+            return _departmentRepository.Delete(id);
         }
 
         public IEnumerable<Department> GetAll()

@@ -9,7 +9,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<XepHang.Data.XepHangDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<XepHangDbContext>
     {
         public Configuration()
         {
@@ -19,32 +19,32 @@
         protected override void Seed(XepHangDbContext context)
         {
             CreateDepartmentSample(context);
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XepHangDbContext()));
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XepHangDbContext()));
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new XepHangDbContext()));
+            var rolemanager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new XepHangDbContext()));
 
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "thanhpt",
-            //    Email = "thanhptse@gmail.com",
-            //    EmailConfirmed = true,
-            //    BirthDay = DateTime.Now,
-            //    FullName = "Phan Trung Thanh"
+            var user = new ApplicationUser()
+            {
+                UserName = "thanhpt",
+                Email = "thanhptse@gmail.com",
+                EmailConfirmed = true,
+                //BirthDay = DateTime.Now,
+                FullName = "Phan Trung Thành"
 
-            //};
+            };
 
-            //manager.Create(user, "123abc$#");
+            manager.Create(user, "123456");
 
-            //if (!roleManager.Roles.Any())
-            //{
-            //    roleManager.Create(new IdentityRole { Name = "Admin" });
-            //    roleManager.Create(new IdentityRole { Name = "User" });
-            //    roleManager.Create(new IdentityRole { Name = "Doctor" });
-            //}
+            if (!rolemanager.Roles.Any())
+            {
+                rolemanager.Create(new IdentityRole { Name = "Admin" });
+                rolemanager.Create(new IdentityRole { Name = "User" });
+                rolemanager.Create(new IdentityRole { Name = "Doctor" });
+            }
 
-            //var adminUser = manager.FindByEmail("thanhptse@gmail.com");
+            var adminuser = manager.FindByEmail("thanhptse@gmail.com");
 
-            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User", "Doctor" });
+            manager.AddToRoles(adminuser.Id, new string[] { "Admin", "User", "Doctor" });
         }
 
         private void CreateDepartmentSample(XepHangDbContext context)
@@ -53,10 +53,10 @@
             {
                 List<Department> listDepartment = new List<Department>()
                 {
-                     new Department() {DepeartmentName="Da Liễu",CreatedDate=DateTime.Now,Status=true },
-                    new Department() {DepeartmentName="Nhi",CreatedDate=DateTime.Now,Status=true },
-                    new Department() {DepeartmentName="Răng Hàm Mặt",CreatedDate=DateTime.Now,Status=true },
-                    new Department() {DepeartmentName="Phụ Sản",CreatedDate=DateTime.Now,Status=true },
+                     new Department() {DepartmentName="Da Liễu",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepartmentName="Nhi",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepartmentName="Răng Hàm Mặt",CreatedDate=DateTime.Now,Status=true },
+                    new Department() {DepartmentName="Phụ Sản",CreatedDate=DateTime.Now,Status=true },
 
                 };
 

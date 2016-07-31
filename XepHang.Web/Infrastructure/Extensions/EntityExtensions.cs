@@ -11,8 +11,8 @@ namespace XepHang.Web.Infrastructure.Extensions
     {
         public static void UpdateDepartment(this Department department, DepartmentViewModel departmentVM)
         {
-            department.DepeartmentId = departmentVM.DepeartmentId;
-            department.DepeartmentName = departmentVM.DepeartmentName;
+            department.DepartmentId = departmentVM.DepartmentId;
+            department.DepartmentName = departmentVM.DepartmentName;
 
             department.CreatedDate = departmentVM.CreatedDate;
             department.Note = departmentVM.Note;
@@ -20,6 +20,31 @@ namespace XepHang.Web.Infrastructure.Extensions
             department.ModifiledDate = departmentVM.ModifiledDate;
             department.ModifiledBy = departmentVM.ModifiledBy;
             department.Status = departmentVM.Status;
+        }
+
+        public static void UpdateRoom(this Room room, RoomViewModel roomVM)
+        {
+            room.RoomId = roomVM.RoomId;
+            room.RoomName = roomVM.RoomName;
+            room.DepartmentId = roomVM.DepartmentId;
+
+            room.CreatedDate = roomVM.CreatedDate;
+            room.Note = roomVM.Note;
+            room.CreateBy = roomVM.CreateBy;
+            room.ModifiledDate = roomVM.ModifiledDate;
+            room.ModifiledBy = roomVM.ModifiledBy;
+            room.Status = roomVM.Status;
+        }
+
+        public static void UpdateOrder(this Order order, OrderViewModel orderVM)
+        {
+            order.OrderId = orderVM.RoomId;
+            order.OrderDate = DateTime.Now;
+            order.RoomId = orderVM.RoomId;
+
+            order.ModifiledDate = orderVM.ModifiledDate;
+            order.ModifiledBy = orderVM.ModifiledBy;
+            order.Status = orderVM.Status;
         }
     }
 }

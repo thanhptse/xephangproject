@@ -24,7 +24,7 @@ namespace XepHang.Model.Models
         [ForeignKey("DepartmentId")]
         public virtual Department Department { set; get; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public string CreateBy { get; set; }
 
@@ -40,5 +40,6 @@ namespace XepHang.Model.Models
         public IEnumerable<NumberReport> NumberReport { set; get; }
 
         public IEnumerable<Order> Order{ set; get; }
+
     }
 }

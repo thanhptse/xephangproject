@@ -13,13 +13,13 @@ namespace XepHang.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int DepeartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
         [Required]
         [MaxLength(50)]
-        public string DepeartmentName { get; set; }
+        public string DepartmentName { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public string CreateBy { get; set; }
 

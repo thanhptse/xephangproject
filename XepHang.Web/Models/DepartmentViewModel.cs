@@ -9,9 +9,9 @@ namespace XepHang.Web.Models
 {
     public class DepartmentViewModel
     {
-        public int DepeartmentId { get; set; }
+        public int DepartmentId { get; set; }
         [Required]
-        public string DepeartmentName { get; set; }
+        public string DepartmentName { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

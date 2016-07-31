@@ -13,7 +13,8 @@ namespace XepHang.Web.Mappings
         public static void Configure()
         {
             Mapper.CreateMap<Department, DepartmentViewModel>();
-            
+            Mapper.CreateMap<Room, RoomViewModel>();
+            Mapper.CreateMap<Order, OrderViewModel>();
         }
     }
 }

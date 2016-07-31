@@ -21,7 +21,7 @@ namespace XepHang.Data.Repositories
         }
         public IEnumerable<Department> GetByName(string name)
         {
-            return DbContext.Departments.Where(x => x.DepeartmentName == name);
+            return DbContext.Departments.Where(x => x.DepartmentName == name);
         }
     }
 }

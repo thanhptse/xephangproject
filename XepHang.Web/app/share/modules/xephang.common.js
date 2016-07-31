@@ -1,3 +1,3 @@
 ﻿(function () {
-    angular.module('xephang.common', ['ui.router'])
+    angular.module('xephang.common', ['ui.router', 'ngBootbox'])
 })();
