@@ -15,7 +15,7 @@ namespace XepHang.Service
 
         void Update(Order order);
 
-        void Delete(int id);
+        Order Delete(int id);
 
         IEnumerable<Order> GetAll();
 
@@ -45,9 +45,9 @@ namespace XepHang.Service
             _orderRepository.Add(order);
         }
 
-        public void Delete(int id)
+        public Order Delete(int id)
         {
-            _orderRepository.Delete(id);
+            return _orderRepository.Delete(id);
         }
 
         public IEnumerable<Order> GetAll()
