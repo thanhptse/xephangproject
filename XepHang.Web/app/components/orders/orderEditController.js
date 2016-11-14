@@ -1,44 +1,44 @@
 ﻿(function (app) {
 
-    app.controller('roomEditController', roomEditController);
+    app.controller('orderEditController', orderEditController);
 
-    roomEditController.$inject = ['apiService', '$scope', '$state', '$stateParams'];
+    orderEditController.$inject = ['apiService', '$scope', '$state', '$stateParams'];
 
-    function roomEditController(apiService, $scope, $state, $stateParams) {
-        $scope.room = {
+    function orderEditController(apiService, $scope, $state, $stateParams) {
+        $scope.order = {
             CreatedDate: new Date(),
             Status: true
         }
 
-        $scope.UpdateRoom = UpdateRoom;
+        $scope.UpdateOrder = UpdateOrder;
 
-        function UpdateRoom() {
-            apiService.put('api/room/update', $scope.room, function (result) {
-                $state.go('rooms')
+        function UpdateOrder() {
+            apiService.put('api/order/update', $scope.order, function (result) {
+                $state.go('orders')
             }, function (error) {
-                console.log('Update room fail');;
+                console.log('Update order fail');;
             });
         }
 
-        function LoadRoomDetail() {
-            apiService.get('api/room/getbyid/' + $stateParams.id, null, function (result) {
-                $scope.room = result.data;
+        function LoadOrderDetail() {
+            apiService.get('api/order/getbyid/' + $stateParams.id, null, function (result) {
+                $scope.order = result.data;
             }, function (error) {
-                console.log('Load room fail');
+                console.log('Load order fail');
             });
         }
 
-        function loadAllDepartment() {
-            apiService.get('api/department/getalldepartment', null, function (result) {
-                $scope.allDepartment = result.data;
+        function loadAllRoom() {
+            apiService.get('api/room/getallroom', null, function (result) {
+                $scope.allRoom = result.data;
             }, function () {
                 console.log('Cannot get list parent');
             });
         }
 
-        loadAllDepartment();
+        loadAllRoom();
 
-        LoadRoomDetail();
+        LoadOrderDetail();
     }
 
-})(angular.module('xephang.rooms'));
+})(angular.module('xephang.orders'));

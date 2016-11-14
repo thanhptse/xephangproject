@@ -42,15 +42,12 @@
   <ItemGroup>
     <Compile Include="DepartmentService.cs" />
     <Compile Include="ErrorService.cs" />
+    <Compile Include="NumberReportService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XepHang.Common\XepHang.Common.csproj">
-      <Project>{40a7e866-e1c4-4b0c-b2a4-4505582480d7}</Project>
-      <Name>XepHang.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XepHang.Data\XepHang.Data.csproj">
       <Project>{32720090-cc2a-4fb4-8320-c39ebcb39e7d}</Project>
       <Name>XepHang.Data</Name>

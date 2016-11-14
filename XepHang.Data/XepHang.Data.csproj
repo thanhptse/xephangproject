@@ -72,11 +72,15 @@
     <Compile Include="Migrations\201607310557444_AddSome.Designer.cs">
       <DependentUpon>201607310557444_AddSome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608150112138_EditOrder.cs" />
+    <Compile Include="Migrations\201608150112138_EditOrder.Designer.cs">
+      <DependentUpon>201608150112138_EditOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DepartmentRepository.cs" />
     <Compile Include="Repositories\ErrorReposity.cs" />
-    <Compile Include="Repositories\NumberReport.cs" />
+    <Compile Include="Repositories\NumberReportRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="XepHangDbContext.cs" />
@@ -86,10 +90,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XepHang.Common\XepHang.Common.csproj">
-      <Project>{40a7e866-e1c4-4b0c-b2a4-4505582480d7}</Project>
-      <Name>XepHang.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XepHang.Model\XepHang.Model.csproj">
       <Project>{f6ee2b9f-383e-4429-8963-f4bf29782a17}</Project>
       <Name>XepHang.Model</Name>
@@ -101,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607310557444_AddSome.resx">
       <DependentUpon>201607310557444_AddSome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608150112138_EditOrder.resx">
+      <DependentUpon>201608150112138_EditOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

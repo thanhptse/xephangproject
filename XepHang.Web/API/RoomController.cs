@@ -14,7 +14,7 @@ using XepHang.Web.Models;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/room")]
-//    [Authorize]
+    [Authorize]
     public class RoomController : ApiControllerBase
     {
         IRoomService _roomService;
@@ -139,7 +139,7 @@ namespace XepHang.Web.API
                     _roomService.SaveChanges();
 
                     var reponseData = Mapper.Map<Room, RoomViewModel>(oldRoom);
-
+                    
                     respone = request.CreateResponse(HttpStatusCode.OK, reponseData);
                 }
 

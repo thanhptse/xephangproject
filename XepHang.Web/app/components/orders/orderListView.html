@@ -5,7 +5,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li><a href="#">Quản lý chung</a></li>
+        <li><a href="#">Đơn Hàng</a></li>
         <li class="active">Quản lý đơn hàng</li>
     </ol>
 </section>
@@ -37,7 +37,8 @@
                         <tr>
                             <th style="width: 5%">ID</th>
                             <th style="width: 20%">Ngày lấy số</th>
-                            <th style="width: 30%">Phòng</th>
+                            <th style="width: 15%">Bệnh Nhân</th>
+                            <th style="width: 15%">Phòng</th>
                             <th style="width: 15%">Số đã lấy</th>
                             <th style="width: 15%">Trạng thái</th>
                             <th style="width: 15%">Thao tác</th>
@@ -45,7 +46,9 @@
                         <tr ng-repeat="item in orders">
                             <td>{{item.OrderId}}</td>
                             <td>{{item.OrderDate | date: 'dd/MM/yyyy'}}</td>
-                            <td>{{item.RoomId}}</td>
+                            <td>{{item.Username}}</td>
+                            <!--<td>{{item.RoomId}}</td>-->
+                            <td><select disabled name="parentId" class="form-control" ng-model="item.RoomId" ng-options="option.RoomId as option.RoomName for option in allRoom"></select></td>
                             <td>{{item.ChosenNumber}}</td>
                             <!--class="badge bg-red" if status = false-->
                             <td>

@@ -5,7 +5,8 @@
         ['xephang.departments',
          'xephang.rooms',
          'xephang.common',
-        'xephang.orders'])
+         'xephang.orders',
+         'xephang.numberreports'])
         .config(config)
         .config(configAuthentication);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -14,7 +15,7 @@
         $stateProvider
             .state('base', {
                 url: '',
-                templateUrl: 'app/share/views/baseView.html',
+                templateUrl: '/app/share/views/baseView.html',
                 abstract: true
             })
             .state('login', {
@@ -25,8 +26,8 @@
             .state('home', {
                 url: "/admin",
                 parent: 'base',
-                templateUrl: "/app/components/home/homeView.html",
-                controller: "homeController"
+                templateUrl: "/app/components/orders/orderListView.html",
+                controller: "orderListController"
             });
 
         $urlRouterProvider.otherwise('/login');

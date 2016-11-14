@@ -12,3 +12,17 @@ D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Model\bin\Debug\Micr
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Model\obj\Debug\XepHang.Model.csprojResolveAssemblyReference.cache
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Model\obj\Debug\XepHang.Model.dll
 D:\CN7\SWD\GroupProject\FinalProject\XepHangProject\XepHang.Model\obj\Debug\XepHang.Model.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\XepHang.Model.dll.config
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\XepHang.Model.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\XepHang.Model.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.csprojResolveAssemblyReference.cache
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Debug\XepHang.Model.pdb

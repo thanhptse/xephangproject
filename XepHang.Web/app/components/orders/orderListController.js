@@ -45,6 +45,15 @@
                 console.log('Load order fail');
             });
         }
+        function loadAllRoom() {
+            apiService.get('api/room/getallroom', null, function (result) {
+                $scope.allRoom = result.data;
+            }, function () {
+                console.log('Cannot get list parent');
+            });
+        }
+
+        loadAllRoom();
 
         $scope.getListOrders();
     }

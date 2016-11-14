@@ -15,6 +15,7 @@ namespace XepHang.Web.Mappings
             Mapper.CreateMap<Department, DepartmentViewModel>();
             Mapper.CreateMap<Room, RoomViewModel>();
             Mapper.CreateMap<Order, OrderViewModel>();
+            Mapper.CreateMap<NumberReport, NumberReportViewModel>();
         }
     }
 }

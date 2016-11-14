@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using XepHang.Data.Infrastructure;
 using XepHang.Data.Repositories;
 using XepHang.Model.Models;
@@ -32,17 +30,28 @@ namespace XepHang.Service
     public class OrderService : IOrderService
     {
         IOrderRepository _orderRepository;
+        INumberReportRepository _numberreportRepository;
+
         IUnitOfWork _unitOfWork;
 
-        public OrderService(IOrderRepository orderRepository, IUnitOfWork unitOfWork)
+        public OrderService(IOrderRepository orderRepository, INumberReportRepository numberreportRepository, IUnitOfWork unitOfWork)
         {
             this._orderRepository = orderRepository;
+            this._numberreportRepository = numberreportRepository;
             this._unitOfWork = unitOfWork;
         }
 
         public void Add(Order order)
         {
+            IQueryable<NumberReport> numReports = _numberreportRepository.GetByRoomAndDate(order.RoomId);
+            
+            NumberReport num = numReports.First();
+            order.ChosenNumber = num.TotalNumberOrder + 1;
             _orderRepository.Add(order);
+
+            num.TotalNumberOrder = num.TotalNumberOrder + 1;
+            _numberreportRepository.Update(num);
+
         }
 
         public Order Delete(int id)

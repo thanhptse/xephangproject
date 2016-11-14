@@ -21,6 +21,9 @@ namespace XepHang.Model.Models
         [ForeignKey("RoomId")]
         public virtual Room Room { set; get; }
 
+        
+        public string Username { set; get; }
+
         public int ChosenNumber { get; set; }
 
         public DateTime CreateDate { get; set; }

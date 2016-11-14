@@ -1,7 +1,7 @@
 ﻿<div class="wrapper">
     <header class="main-header">
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="javascript:void(0);" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>XH</span>
             <!-- logo for regular state and mobile devices -->
@@ -20,7 +20,7 @@
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
                             <span class="label label-success">4</span>
                         </a>
@@ -50,7 +50,7 @@
                     </li>
                     <!-- Notifications: style can be found in dropdown.less -->
                     <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
                             <span class="label label-warning">10</span>
                         </a>
@@ -71,7 +71,7 @@
                     </li>
                     <!-- Tasks: style can be found in dropdown.less -->
                     <li class="dropdown tasks-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-flag-o"></i>
                             <span class="label label-danger">9</span>
                         </a>
@@ -121,13 +121,13 @@
                             <li class="user-body">
                                 <div class="row">
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
+                                        <a href="javascript:void(0);">Followers</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
+                                        <a href="javascript:void(0);">Sales</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
+                                        <a href="javascript:void(0);">Friends</a>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -135,10 +135,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="javascript:void(0);" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" ng-click="logOut()" class="btn btn-default btn-flat">Thoát</a>
+                                    <a ng-click="logOut()" class="btn btn-default btn-flat">Thoát</a>
                                 </div>
                             </li>
                         </ul>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="pull-left info">
                     <p>{{authentication.userName}}</p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="javascript:void(0);"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <!-- search form -->
@@ -171,7 +171,7 @@
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search...">
                     <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <button type="button" name="search" id="search-btn" class="btn btn-flat">
                             <i class="fa fa-search"></i>
                         </button>
                     </span>
@@ -182,9 +182,8 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
-                    <a href="javascript:void(0);">
-                        <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
-                        
+                    <a ui-sref="orders">
+                        <i class="fa fa-dashboard"></i> <span>Đơn Hàng</span>
                     </a>
                 </li>
                 <li class="treeview">
@@ -192,7 +191,7 @@
                         <i class="fa fa-files-o"></i>
                         <span>Quản Lý Bệnh Viện</span>
                         <span class="pull-right-container">
-                            <span class="label label-primary pull-right">4</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
@@ -202,19 +201,10 @@
                 </li>
                 
                 <li class="treeview">
-                    <a href="javascript:void(0);">
+                    <a ui-sref="numberreports">
                         <i class="fa fa-pie-chart"></i>
-                        <span>Quản lý chung</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                        <span>Thông Tin Số</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a ui-sref="orders"><i class="fa fa-circle-o"></i> Đơn hàng</a></li>
-                        <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                        <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                        <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-                    </ul>
                 </li>
 
             </ul>

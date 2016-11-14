@@ -16,6 +16,7 @@
             apiService.post('api/order/create', $scope.order, function (result) {
                 $state.go('orders')
             }, function (error) {
+                console.log(error)
                 console.log('Add order fail')
             });
         }

@@ -14,7 +14,7 @@ using XepHang.Web.Models;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/order")]
-    //    [Authorize]
+    //[Authorize]
     public class OrderController : ApiControllerBase
     {
         IOrderService _orderService;
@@ -66,8 +66,12 @@ namespace XepHang.Web.API
 
                     var newOrder = new Order();
                     newOrder.UpdateOrder(orderVM);
+                    if (newOrder.Username == null || newOrder.Username == "")
+                    {
+                        newOrder.Username = User.Identity.Name;
+                    }
                     newOrder.CreateDate = DateTime.Now;
-                    
+
                     _orderService.Add(newOrder);
                     _orderService.SaveChanges();
 
@@ -97,6 +101,50 @@ namespace XepHang.Web.API
                     var reponseData = Mapper.Map<Order, OrderViewModel>(oldOrder);
 
                     respone = request.CreateResponse(HttpStatusCode.OK, reponseData);
+                }
+
+                return respone;
+            });
+        }
+
+        [Route("getbyid/{id:int}")]
+        public HttpResponseMessage Get(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _orderService.GetById(id);
+
+
+                var reponseData = Mapper.Map<Order, OrderViewModel>(model);
+
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, reponseData);
+
+                return response;
+            });
+        }
+
+        [Route("update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, OrderViewModel orderVM)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage respone = null;
+                if (!ModelState.IsValid)
+                {
+                    respone = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+
+                    var dbOrder = _orderService.GetById(orderVM.OrderId);
+                    dbOrder.UpdateOrder(orderVM);
+                    dbOrder.ModifiledDate = DateTime.Now;
+                    dbOrder.ModifiledBy = User.Identity.Name;
+                    _orderService.Update(dbOrder);
+                    _orderService.SaveChanges();
+
+                    var responseData = Mapper.Map<Order, OrderViewModel>(dbOrder);
+                    respone = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
                 return respone;

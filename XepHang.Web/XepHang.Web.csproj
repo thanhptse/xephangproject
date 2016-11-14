@@ -191,6 +191,7 @@
     <Compile Include="API\AccountController.cs" />
     <Compile Include="API\DepartmentController.cs" />
     <Compile Include="API\HomeController.cs" />
+    <Compile Include="API\NumberReportController.cs" />
     <Compile Include="API\OrderController.cs" />
     <Compile Include="API\RoomController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -229,6 +230,11 @@
     <Content Include="app\components\home\rootController.js" />
     <Content Include="app\components\login\loginController.js" />
     <Content Include="app\components\login\loginView.html" />
+    <Content Include="app\components\numberreports\numberreport.module.js" />
+    <Content Include="app\components\numberreports\numberreportEditController.js" />
+    <Content Include="app\components\numberreports\numberreportEditView.html" />
+    <Content Include="app\components\numberreports\numberreportListController.js" />
+    <Content Include="app\components\numberreports\numberreportListView.html" />
     <Content Include="app\components\orders\orderAddController.js" />
     <Content Include="app\components\orders\orderAddView.html" />
     <Content Include="app\components\orders\orderEditController.js" />
@@ -355,8 +361,6 @@
     <Content Include="Assets\admin\libs\bootstrap\js\npm.js" />
     <Content Include="Assets\admin\libs\fastclick\fastclick.js" />
     <Content Include="Assets\admin\libs\fastclick\fastclick.min.js" />
-    <Content Include="Assets\admin\libs\jquery-slimscroll\jquery.slimscroll.js" />
-    <Content Include="Assets\admin\libs\jquery-slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Assets\admin\libs\jQuery\jquery-2.2.3.min.js" />
     <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.js" />
     <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.min.js" />
@@ -395,7 +399,6 @@
     <Folder Include="Assets\admin\libs\bootstrap\less\" />
     <Folder Include="Assets\admin\libs\bootstrap\nuget\" />
     <Folder Include="Assets\admin\libs\fastclick\lib\" />
-    <Folder Include="Assets\admin\libs\jquery-slimscroll\examples\" />
     <Folder Include="Assets\client\" />
   </ItemGroup>
   <ItemGroup>
@@ -407,10 +410,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XepHang.Common\XepHang.Common.csproj">
-      <Project>{40a7e866-e1c4-4b0c-b2a4-4505582480d7}</Project>
-      <Name>XepHang.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XepHang.Data\XepHang.Data.csproj">
       <Project>{32720090-cc2a-4fb4-8320-c39ebcb39e7d}</Project>
       <Name>XepHang.Data</Name>
@@ -441,12 +440,6 @@
     <Content Include="Assets\admin\libs\angular\LICENSE.md" />
     <Content Include="Assets\admin\libs\angular\package.json" />
     <Content Include="Assets\admin\libs\angular\README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\admin\libs\jquery-slimscroll\.bower.json" />
-    <Content Include="Assets\admin\libs\jquery-slimscroll\bower.json" />
-    <Content Include="Assets\admin\libs\jquery-slimscroll\package.json" />
-    <Content Include="Assets\admin\libs\jquery-slimscroll\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\libs\bootstrap\css\bootstrap.css.map" />
@@ -509,6 +502,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\swdpub.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

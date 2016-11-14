@@ -14,7 +14,7 @@ using AutoMapper;
 namespace XepHang.Web.API
 {
     [RoutePrefix("api/department")]
-    //[Authorize]
+    [Authorize]
     public class DepartmentController : ApiControllerBase
     {
         IDepartmentService _departmentService;

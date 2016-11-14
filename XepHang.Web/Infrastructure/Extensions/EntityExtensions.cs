@@ -38,13 +38,25 @@ namespace XepHang.Web.Infrastructure.Extensions
 
         public static void UpdateOrder(this Order order, OrderViewModel orderVM)
         {
-            order.OrderId = orderVM.RoomId;
-            order.OrderDate = DateTime.Now;
+            order.OrderId = orderVM.OrderId;
+            order.Username = orderVM.Username;
+            order.OrderDate = orderVM.OrderDate;
             order.RoomId = orderVM.RoomId;
+            //order.ChosenNumber = orderVM.ChosenNumber;
+            order.Username = orderVM.Username;
 
             order.ModifiledDate = orderVM.ModifiledDate;
             order.ModifiledBy = orderVM.ModifiledBy;
             order.Status = orderVM.Status;
+        }
+
+        public static void UpdateNumberreport(this NumberReport report, NumberReportViewModel reportVM)
+        {
+            report.Id = reportVM.Id;
+            report.RoomId = reportVM.RoomId;
+            report.CurrentNumbebOrder = reportVM.CurrentNumbebOrder;
+            report.TotalNumberOrder = reportVM.TotalNumberOrder;
+            
         }
     }
 }

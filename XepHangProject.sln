@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XepHang.Common", "XepHang.Common\XepHang.Common.csproj", "{40A7E866-E1C4-4B0C-B2A4-4505582480D7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XepHang.Data", "XepHang.Data\XepHang.Data.csproj", "{32720090-CC2A-4FB4-8320-C39EBCB39E7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XepHang.Model", "XepHang.Model\XepHang.Model.csproj", "{F6EE2B9F-383E-4429-8963-F4BF29782A17}"
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40A7E866-E1C4-4B0C-B2A4-4505582480D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40A7E866-E1C4-4B0C-B2A4-4505582480D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40A7E866-E1C4-4B0C-B2A4-4505582480D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40A7E866-E1C4-4B0C-B2A4-4505582480D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32720090-CC2A-4FB4-8320-C39EBCB39E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32720090-CC2A-4FB4-8320-C39EBCB39E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32720090-CC2A-4FB4-8320-C39EBCB39E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
