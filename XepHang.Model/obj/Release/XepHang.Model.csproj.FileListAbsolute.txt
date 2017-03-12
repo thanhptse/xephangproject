@@ -1,0 +1,14 @@
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\XepHang.Model.dll.config
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\XepHang.Model.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\XepHang.Model.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\EntityFramework.SqlServer.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\EntityFramework.SqlServer.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Release\XepHang.Model.csprojResolveAssemblyReference.cache
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Release\XepHang.Model.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Model\obj\Release\XepHang.Model.pdb

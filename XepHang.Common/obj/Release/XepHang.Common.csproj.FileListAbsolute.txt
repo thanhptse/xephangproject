@@ -1,0 +1,4 @@
+D:\CN7\SWD\Git\XepHang\XepHang.Common\bin\Release\XepHang.Common.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Common\bin\Release\XepHang.Common.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Common\obj\Release\XepHang.Common.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Common\obj\Release\XepHang.Common.pdb

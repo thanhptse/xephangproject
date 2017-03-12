@@ -1,0 +1,72 @@
+﻿    <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Danh sách đơn hàng
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Lấy Số</a></li>
+        <li class="active">Danh sách</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Quản lý số</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="width: 5%">ID</th>
+                            <th style="width: 20%">Phòng</th>
+                            <th style="width: 20%">Ngày Đặt</th>
+                            <th style="width: 15%">Số Hiện Tại</th>
+                            <th style="width: 15%">Tổng Số Đã Lấy</th>
+                            <th style="width: 25%">Trạng thái</th>
+                        </tr>
+                        <tr ng-repeat="item in numberreports">
+                            <td>{{item.Id}}</td>
+                            <!--<td>{{item.RoomId}}</td>-->
+
+                            <td><select disabled name="parentId" class="form-control" ng-model="item.RoomId" ng-options="option.RoomId as option.RoomName for option in allRoom"></select></td>
+                            <td>{{item.OrderDate | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{item.CurrentNumbebOrder}}</td>
+                            <td>{{item.TotalNumberOrder}}</td>
+
+                            <td>
+                                <button class="btn btn-sm btn-primary" ui-sref="numberreport_edit({id:item.Id})"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-sm btn-danger" ng-click="deleteNumberreport(item.Id)"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Tổng số bản ghi: {{totalCount}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <!--box footer-->
+        <div class="box-footer">
+            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getListNumberreports(page)"></pager-directive>
+        </div>
+        <!-- /.box-footer-->
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->

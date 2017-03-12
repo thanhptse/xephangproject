@@ -1,0 +1,17 @@
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Service.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Service.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Common.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Data.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Model.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\EntityFramework.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Common.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Data.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\XepHang.Model.pdb
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\EntityFramework.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\CN7\SWD\Git\XepHang\XepHang.Service\obj\Release\XepHang.Service.csprojResolveAssemblyReference.cache
+D:\CN7\SWD\Git\XepHang\XepHang.Service\obj\Release\XepHang.Service.dll
+D:\CN7\SWD\Git\XepHang\XepHang.Service\obj\Release\XepHang.Service.pdb
